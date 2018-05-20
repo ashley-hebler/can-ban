@@ -1,0 +1,52 @@
+.hero {
+  background-color: $block3;
+  color: #fff;
+  font-size: 1em;
+  &__upper {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding: 2em 0;
+  }
+  &__block {
+    background-color: $white;
+    margin: 1em;
+    color:$body_color;
+  }
+  &--2 {
+    background-color: $block2;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__timestamp,
+  &__icon {
+    position: absolute;
+    top: 0;
+    padding: .5em;
+    // display: none;
+  }
+  &__icon {
+    left: 0;
+    width: 1.5em;
+    height: 1.5em;
+    fill: #fff;
+  }
+  &__timestamp {
+    right: 0;
+  }
+  @include respond-to(sm-and-up) {
+    &__upper {
+      height: 50%;
+      height: 50vh;
+      font-size: 2em;
+      padding: 0;
+    }
+    &__timestamp,
+    &__icon {
+      display: block;
+    }
+  }
+}

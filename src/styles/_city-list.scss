@@ -1,0 +1,11 @@
+.city-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 auto;
+	&__item {
+		display: table-cell;
+	}
+	@include respond-to(md-and-up) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
