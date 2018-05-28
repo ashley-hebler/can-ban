@@ -9,14 +9,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./views/Home";
 import River from "./views/River";
 import About from "./views/About";
+
 // Components
 import SiteFooter from "./components/SiteFooter";
 import "./App.css";
 import Helmet from "react-helmet";
 
-
 // Helpers
 import { slugify } from "./helpers";
+
+// Tracking
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-119991646-1");
 
 class App extends Component {
   state = {
@@ -150,6 +154,7 @@ class App extends Component {
   componentDidMount() {
     this.getCompText("littering");
     this.updateText();
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
     return (
