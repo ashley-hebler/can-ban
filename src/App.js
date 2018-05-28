@@ -14,6 +14,7 @@ import SiteFooter from "./components/SiteFooter";
 import "./App.css";
 import Helmet from "react-helmet";
 
+
 // Helpers
 import { slugify } from "./helpers";
 
@@ -218,21 +219,5 @@ class App extends Component {
     );
   }
 }
-
-const styles = {};
-
-styles.fill = {
-  position: "absolute",
-  left: 0,
-  right: 0,
-  top: 0,
-  bottom: 0
-};
-
-styles.content = {
-  ...styles.fill,
-  top: "40px",
-  textAlign: "center"
-};
 
 export default App;

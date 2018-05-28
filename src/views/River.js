@@ -1,5 +1,7 @@
 import React from "react";
 import City from "../components/City";
+import { Link } from "react-router-dom";
+import Arrow from "../img/Arrow.js";
 
 const ReactMarkdown = require("react-markdown");
 
@@ -23,15 +25,21 @@ class River extends React.Component {
   renderMessage() {
     if (this.props.currentRiver.slug === "new-braunfels-tx") {
       return (
-        <h2>
-          The Comal River and a portion of the Guadalupe River does currently have a ban on disposable containers within city limits.
+        <h2 className="river__title">
+          The Comal River and a portion of the Guadalupe River{" "}
+          <span className="river__status--neg river__status">
+            does currently have a ban on disposable containers within city
+            limits.
+          </span>
         </h2>
       );
     } else {
       return (
-        <h2>
-          The {this.props.currentRiver.rivers} river does not currently ban
-          disposable containers.
+        <h2 className="river__title">
+          The {this.props.currentRiver.rivers} River{" "}
+          <span className="river__status--pos river__status">
+            does not currently have a ban disposable containers.
+          </span>
         </h2>
       );
     }
@@ -45,8 +53,18 @@ class River extends React.Component {
           compact={false}
         />
         <div className="container river__text">
+          <nav className="river__nav-wrap">
+            <Link className="river__nav-item" to="/">
+              <Arrow marker="icon" />
+              <span>Back</span>
+            </Link>
+          </nav>
           {this.renderMessage()}
-          <ReactMarkdown source={this.state.source} escapeHtml={false}/>
+          <ReactMarkdown
+            source={this.state.source}
+            escapeHtml={false}
+            className="article"
+          />
         </div>
       </div>
     );

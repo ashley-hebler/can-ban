@@ -9,13 +9,7 @@ class SiteFooter extends React.Component {
           &copy; 2018 isthereacanban.com
           <ul className="site-footer__list">
             <li>
-              <Link to="/about">Icons</Link>
-            </li>
-            <li>
-              <Link to="/about">Contact</Link>
-            </li>
-            <li>
-              <Link to="/about">Links</Link>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </div>

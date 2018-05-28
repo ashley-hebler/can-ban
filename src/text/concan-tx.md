@@ -1,10 +1,20 @@
 
-###  What parts are within city limits?
-This is a New Braunfels only ordinance. For the Guad, this means "that portion of the Guadalupe River that starts at the Gruene Bridge and ends at the Mill Dam"<sup>1<sup>. The Comal River starts and eventually flows into the Gaud all in New Braunfels.
+###  Be mindful of alcohol in state parks
+A portion of the Frio River flows through Garner State Park, which prohibits alcohol. When navigating through the river in park boundaries, it's best to leave the beer in the cooler to avoid penalties.
 
-### Definition of a disposable container
-According to Sec. 86-14(a) of the New Braunfels city code of ordinances, "Disposable container means a receptacle designed to be used once, then thrown away. For purposes of this subsection, disposable containers include, but are not limited to, metal and aluminum cans, glass containers, Styrofoam cups and containers, cardboard containers, paper sacks, boxes, paper napkins and towels, and plastic containers and utensils."
+### Other rules
+1. No glass.
+2. No styrofoam.
+3. No littering.
 
-### What about River Rd. and the Horseshoe?
-
-1 https://library.municode.com/tx/new_braunfels/codes/code_of_ordinances?nodeId=PTIICOOR_CH86PARE_ARTIINGE_S86-14COARALRILAST
+<footer>
+    <h3>Sources</h3>
+    <ul>
+        <li>
+        <a href="https://texreg.sos.state.tx.us/public/readtac$ext.TacPage?sl=R&app=9&p_dir=&p_rloc=&p_tloc=&p_ploc=&pg=1&p_tac=&ti=31&pt=2&ch=59&rl=134">Texas State Park Regulations 59.134 (b).</a>
+        </li>
+        <li>
+        <a href="https://texreg.sos.state.tx.us/public/readtac$ext.TacPage?sl=R&app=9&p_dir=&p_rloc=&p_tloc=&p_ploc=&pg=1&p_tac=&ti=31&pt=2&ch=59&rl=134">TexAgs thread on drinking in a State Park</a>
+        </li>
+    </ul>
+</footer>

@@ -54,13 +54,18 @@
   }
 }
 
-.fade-enter.about {
+.fade-enter.about,
+.fade-enter.river {
     opacity: 0;
     z-index: 1;
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 250ms ease-in;
+}
+
+.fade-exit {
+  opacity: 0;
 }
 
 .icon-list {

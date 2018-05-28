@@ -5,7 +5,6 @@ import Falls from "../img/Falls.js";
 import Boat from "../img/Boat.js";
 import Water from "../img/Water.js";
 
-
 const ReactMarkdown = require("react-markdown");
 const iconAttr = [
   {
@@ -49,6 +48,7 @@ class IconCredits extends React.Component {
   }
   componentDidMount() {
     this.getCompText("about");
+    window.scrollTo(0, 0);
   }
   render() {
     return (
