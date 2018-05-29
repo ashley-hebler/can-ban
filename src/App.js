@@ -19,8 +19,7 @@ import Helmet from "react-helmet";
 import { slugify } from "./helpers";
 
 // Tracking
-import ReactGA from "react-ga";
-ReactGA.initialize("UA-119991646-1");
+import GA from "./utils/GoogleAnalytics";
 
 class App extends Component {
   state = {
@@ -154,7 +153,6 @@ class App extends Component {
   componentDidMount() {
     this.getCompText("littering");
     this.updateText();
-    ReactGA.pageview(window.location.pathname + window.location.search);
   }
   render() {
     return (
@@ -173,6 +171,7 @@ class App extends Component {
                     true
                   )} site-wrap__main`}
                 >
+                  {GA.init() && <GA.RouteTracker />}
                   <TransitionGroup>
                     <CSSTransition
                       key={location.key}
