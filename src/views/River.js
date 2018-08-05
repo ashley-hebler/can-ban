@@ -1,9 +1,9 @@
 import React from "react";
 import City from "../components/City";
+import TextBody from "../components/TextBody";
 import { Link } from "react-router-dom";
 import Arrow from "../img/Arrow.js";
-
-const ReactMarkdown = require("react-markdown");
+import allText from "../text/all.json";
 
 class River extends React.Component {
   state = {
@@ -60,11 +60,7 @@ class River extends React.Component {
             </Link>
           </nav>
           {this.renderMessage()}
-          <ReactMarkdown
-            source={this.state.source}
-            escapeHtml={false}
-            className="article"
-          />
+          <TextBody text={allText[this.props.currentRiver.slug]} />
         </div>
       </div>
     );
