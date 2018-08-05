@@ -4,8 +4,9 @@ import Fish from "../img/Fish.js";
 import Falls from "../img/Falls.js";
 import Boat from "../img/Boat.js";
 import Water from "../img/Water.js";
+import TextBody from "../components/TextBody";
+import allText from "../text/all.json";
 
-const ReactMarkdown = require("react-markdown");
 const iconAttr = [
   {
     label: "river fish",
@@ -33,28 +34,18 @@ class IconCredits extends React.Component {
   state = {
     source: ""
   };
-  getCompText(source) {
-    let sourceFile = require(`../text/${source}.md`);
-    fetch(sourceFile)
-      .then(response => response.text())
-      .then(content => {
-        this.setState({ source: content });
-        return;
-      });
-  }
   renderIcon(file) {
     const Icon = file;
     return <Icon marker="icon-list__icon" />;
   }
   componentDidMount() {
-    this.getCompText("about");
     window.scrollTo(0, 0);
   }
   render() {
     return (
       <div className="about">
         <div className="about__inner container">
-          <ReactMarkdown source={this.state.source} />
+          <TextBody text={allText["about"]} />
           <ul class="icon-list">
             {Object.keys(iconAttr).map(key => (
               <li key={key} className="icon-list__item">
