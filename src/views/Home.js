@@ -2,6 +2,7 @@ import React from "react";
 
 import Hero from "../components/Hero";
 import CityList from "../components/CityList";
+import Ad from "../components/Ad";
 import allText from "../text/all.json";
 const ReactMarkdown = require("react-markdown");
 
@@ -15,6 +16,9 @@ class Home extends React.Component {
           <div className="text-block__inner container container--small">
             <ReactMarkdown source={allText["littering"]} escapeHtml={true} />
           </div>
+        </div>
+        <div className="ad">
+          <Ad />
         </div>
       </div>
     );

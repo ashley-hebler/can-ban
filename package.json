@@ -15,6 +15,7 @@
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-dfp": "^0.7.5",
     "react-dom": "^16.3.2",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
@@ -25,14 +26,15 @@
     "webfontloader": "^1.6.28"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "scripts": {
     "precommit": "lint-staged",
-    "build-css":
-      "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p parse-markdown watch-css start-js",
     "build-js": "react-scripts build && react-snapshot",
