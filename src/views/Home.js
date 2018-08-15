@@ -17,9 +17,9 @@ class Home extends React.Component {
             <ReactMarkdown source={allText["littering"]} escapeHtml={true} />
           </div>
         </div>
-        <div className="ad">
+        {/* <div className="ad">
           <Ad />
-        </div>
+        </div> */}
       </div>
     );
   }
