@@ -175,6 +175,8 @@
   border-radius: 20px;
   background-color: $white;
   position: relative;
+  border: 5px solid $block3;
+
   &__col {
     width: 150px;
     padding: 1em;
@@ -193,7 +195,7 @@
   }
   &__status-text {
     font-size: 2em;
-    color: $body-color;
+    color: $block3;
     margin: 0;
     line-height: 1;
   }

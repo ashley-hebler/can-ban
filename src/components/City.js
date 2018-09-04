@@ -62,7 +62,7 @@ class City extends React.Component {
       //   </div>
       // </section>
       <section
-        className={`city city--${this.props.info.icon} ${
+        className={`city city--${this.props.index} ${
           this.props.transitionClass
         } ${this.props.compact ? "compact" : "default"}`}
       >
