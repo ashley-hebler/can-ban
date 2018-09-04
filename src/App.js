@@ -3,7 +3,13 @@ import Hero from "./components/Hero";
 
 // Animation
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from "react-router-dom";
 
 // Views
 import Home from "./views/Home";
@@ -14,12 +20,13 @@ import About from "./views/About";
 import SiteFooter from "./components/SiteFooter";
 import "./App.css";
 import Helmet from "react-helmet";
+import ScrollToTop from "./utils/ScrollToTop";
 
 // Helpers
 import { slugify } from "./helpers";
 
 // Tracking
-import GA from "./utils/GoogleAnalytics";
+import withAnalytics from "./utils/analytics";
 
 class App extends Component {
   state = {
@@ -27,8 +34,19 @@ class App extends Component {
       {
         name: "New Braunfels, TX",
         icon: "fish",
-        rivers: "Guadalupe/Comal",
-        status: "Can ban in city limits*",
+        rivers: "Comal",
+        status: "Banned",
+        color: "caution",
+        plural: true,
+        canBan: true,
+        file: "nb",
+        markup: ""
+      },
+      {
+        name: "New Braunfels, TX",
+        icon: "fish",
+        rivers: "Guadalupe",
+        status: "Banned*",
         color: "caution",
         plural: true,
         canBan: true,
@@ -39,7 +57,7 @@ class App extends Component {
         name: "San Marcos, TX",
         icon: "falls",
         rivers: "San Marcos",
-        status: "No can ban",
+        status: "Allowed",
         color: "success",
         plural: false,
         canBan: false,
@@ -50,7 +68,7 @@ class App extends Component {
         name: "Concan, TX",
         icon: "water",
         rivers: "Frio",
-        status: "No can ban",
+        status: "Allowed",
         color: "success",
         plural: false,
         canBan: false,
@@ -61,7 +79,7 @@ class App extends Component {
         name: "Bandera, TX",
         icon: "boat",
         rivers: "Medina",
-        status: "No can ban",
+        status: "Allowed",
         color: "success",
         plural: false,
         canBan: false,
@@ -76,13 +94,14 @@ class App extends Component {
       index: 1
     },
     hero2: {
-      main: "Is littering banned?",
+      main: "About this site",
       icons: false,
       index: 2,
       content: ""
     },
     littering: "",
-    testTest: []
+    testTest: [],
+    svgs: ""
   };
   getCompText = text => {
     let textFile = require(`./text/${text}.md`);
@@ -93,16 +112,22 @@ class App extends Component {
         return;
       });
   };
+  getSVGs = () => {
+    let componentFile = require(`./img/icon-sprite.svg`);
+    fetch(componentFile)
+      .then(response => response.text())
+      .then(text => {
+        this.setState({
+          svgs: text
+        });
+        return;
+      });
+  };
   setText = text => {
     let textFile = require(`./text/${text}.md`);
     fetch(textFile)
       .then(response => response.text())
       .then(content => {
-        // let newelement = obj;
-        // newelement.markup = content;
-        // this.setState(prevState => ({
-        //   cities: [...prevState.cities, newelement]
-        // }));
         return content;
       });
   };
@@ -122,7 +147,7 @@ class App extends Component {
       return slug;
     }
     Object.keys(this.state.cities).filter(key => {
-      let item = slugify(this.state.cities[key].name);
+      let item = slugify(this.state.cities[key].rivers);
       if (item === slug) {
         current = this.state.cities[key];
         current.slug = slug;
@@ -134,15 +159,6 @@ class App extends Component {
     let arr = [];
     let cities = this.state.cities;
     Object.keys(cities).filter(key => {
-      // cities[key].text = this.setText(cities[key].file);
-      // console.log(vm.setText(cities[key].file));
-      // let textFile = require(`./text/${cities[key].file}.md`);
-      // fetch(textFile)
-      //   .then(response => response.text())
-      //   .then(content => {
-      //     cities[key].text = content;
-      //     // arr.push(cities[key]);
-      //   });
       arr.push(cities[key]);
     });
     console.log(arr);
@@ -153,15 +169,20 @@ class App extends Component {
   componentDidMount() {
     this.getCompText("littering");
     this.updateText();
+    this.getSVGs();
   }
   render() {
     return (
       <div className="App">
-        <Router>
-          <Route
-            render={({ location }) => (
+        <Route
+          render={({ location }) => (
+            <ScrollToTop>
               <div className="site-wrap">
                 <Helmet title="Is there a can ban? | 2018" />
+                <span
+                  className="hidden"
+                  dangerouslySetInnerHTML={{ __html: this.state.svgs }}
+                />
                 <Link to="/">
                   <Hero heroData={this.state.hero1} />
                 </Link>
@@ -171,7 +192,7 @@ class App extends Component {
                     true
                   )} site-wrap__main`}
                 >
-                  {GA.init() && <GA.RouteTracker />}
+                  {/* {GA.init() && <GA.RouteTracker />} */}
                   <TransitionGroup>
                     <CSSTransition
                       key={location.key}
@@ -216,12 +237,12 @@ class App extends Component {
                 </main>
                 <SiteFooter />
               </div>
-            )}
-          />
-        </Router>
+            </ScrollToTop>
+          )}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(withAnalytics(App));

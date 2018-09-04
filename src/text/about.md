@@ -12,5 +12,5 @@ Please send an email to ash.heb.promo@gmail.com
 
 
 ## Icon Attribution
-The lovely icons used for each river were found on the [Noun Project](https://thenounproject.com/). The talented icon designers and icons are listed below for proper attribution.
+The lovely icons used on this site were found on the [Noun Project](https://thenounproject.com/). The talented icon designers and icons are listed below for proper attribution.
 

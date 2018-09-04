@@ -1,11 +1,9 @@
 .site-footer {
 	padding: 3em 0;
 	border-top: 5px solid darken($primary-color, 10%);
-	background-color: $primary-color;
-	color: #fff;
 	text-align: center;
 	a {
-		color: #fff;
+		color: $body-color;
 		text-decoration: none;
 	}
 	&__list {

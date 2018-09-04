@@ -18,6 +18,7 @@ class CityList extends React.Component {
               info={this.props.cities[key]}
               transitionClass={this.addClassIfLast(this.props.cities[key].name)}
               compact={true}
+              index={key}
             />
           </div>
         ))}
