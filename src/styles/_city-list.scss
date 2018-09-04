@@ -1,11 +1,16 @@
 .city-list {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	margin: 0 auto;
+	// display: grid;
+	// grid-template-columns: 1fr 1fr;
+	margin: 3em auto;
+	max-width: 600px;
 	&__item {
-		display: table-cell;
+		margin: 1em;
 	}
 	@include respond-to(md-and-up) {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		max-width: 1200px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		// max-width: 1800px;
 	}
 }

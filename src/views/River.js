@@ -10,7 +10,7 @@ class River extends React.Component {
     source: ""
   };
   componentDidMount() {
-    this.props.setRiver(this.props.currentRiver.name);
+    this.props.setRiver(this.props.currentRiver.rivers);
     this.getCompText(this.props.currentRiver.slug);
   }
   getCompText = source => {
@@ -23,26 +23,19 @@ class River extends React.Component {
       });
   };
   renderMessage() {
-    if (this.props.currentRiver.slug === "new-braunfels-tx") {
-      return (
-        <h2 className="river__title">
-          The Comal River and a portion of the Guadalupe River{" "}
-          <span className="river__status--neg river__status">
-            does currently have a ban on disposable containers within city
-            limits.
-          </span>
-        </h2>
-      );
-    } else {
-      return (
-        <h2 className="river__title">
-          The {this.props.currentRiver.rivers} River{" "}
-          <span className="river__status--pos river__status">
-            does not currently have a ban disposable containers.
-          </span>
-        </h2>
-      );
-    }
+    const isCanBan = this.props.currentRiver.canBan;
+    const isSpecial = this.props.currentRiver.slug === "guadalupe";
+    return (
+      <h2 className="river__title">
+        The {this.props.currentRiver.rivers} River{" "}
+        <span
+          className={`river__status--${isCanBan ? "neg" : "pos"} river__status`}
+        >
+          does {isCanBan ? "not" : ""} currently allow disposable containers
+          {isSpecial ? " within New Braunfels city limits" : ""}.
+        </span>
+      </h2>
+    );
   }
   render() {
     return (

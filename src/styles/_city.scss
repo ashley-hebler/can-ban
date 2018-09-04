@@ -1,168 +1,237 @@
+// .city {
+//   &__title {
+//     font-size: 1.2em;
+//   }
+//   &__icon {
+//     position: absolute;
+//     &--falls {
+//       fill: darken($block1, 30%);
+//       width: 6em;
+//       height: 6em;
+//       right: -6px;
+//       bottom: 32px;
+//     }
+//     &--fish {
+//       fill: darken($block2, 30%);
+//       width: 8em;
+//       height: 4em;
+//       left: 0;
+//       bottom: 33px;
+//     }
+//     &--water {
+//       fill: lighten($block3, 30%);
+//       width: 8em;
+//       height: 4em;
+//       left: -20px;
+//       bottom: 30px;
+//     }
+//     &--boat {
+//       fill: lighten($block4, 20%);
+//       width: 8em;
+//       height: 4em;
+//       right: 0;
+//       bottom: 30px;
+//     }
+//     .river & {
+//       bottom: 0;
+//       right: 0;
+//       left: auto;
+//       &--falls {
+//         bottom: -7px;
+//         right: -3px;
+//       }
+//     }
+//   }
+//   &__upper {
+//     background-color: $block1;
+//     height: 40vh;
+//     color: #fff;
+//     padding: 0.5em;
+//     position: relative;
+//     overflow: hidden;
+//     text-align: center;
+//     &--fish {
+//       background-color: $block2;
+//     }
+//     &--water {
+//       background-color: $block3;
+//     }
+//     &--boat {
+//       background-color: $block4;
+//     }
+//     .default & {
+//       text-align: left;
+//       height: auto;
+//       padding-bottom: 4em;
+//     }
+//   }
+//   &__subtitle,
+//   &__title {
+//     .default & {
+//       margin: 0;
+//     }
+//   }
+//   &__status {
+//     border: 3px solid darken($block1, 20%);
+//     border-left: none;
+//     border-right: none;
+//     background-color: rgba(#fff, 0.9);
+//     color: #333;
+//     margin: 1em 0 0;
+//     font-size: 1em;
+//     padding: 2em 0 1em;
+//     font-size: 0.9em;
+//     position: relative;
+//     &--fish {
+//       border-color: darken($block2, 20%);
+//       // background-color: lighten($block2, 20%);
+//     }
+//     &--water {
+//       border-color: lighten($block3, 20%);
+//       // background-color: lighten($block2, 20%);
+//     }
+//     &--boat {
+//       border-color: lighten($block4, 20%);
+//       // background-color: lighten($block2, 20%);
+//     }
+//     // background-color: $white;
+//   }
+//   &__status-icon {
+//     width: 1em;
+//     height: 1em;
+//     position: absolute;
+//     top: 0.5em;
+//     left: 0;
+//     right: 0;
+//     margin: 0 auto;
+//     &--caution {
+//       fill: $caution;
+//     }
+//     &--success {
+//       fill: $success;
+//     }
+//   }
+//   &__status-text {
+//     font-size: 1em;
+//     margin: 0;
+//   }
+//   &__btn {
+//     font-size: .9em;
+//     color: #fff;
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     left: 0;
+//     padding: .5em 0;
+//     span {
+//       display: inline-block;
+//       vertical-align: middle;
+//     }
+//     &--falls {
+//       background-color: darken($block1, 30%);
+//     }
+//     &--fish {
+//       background-color: darken($block2, 30%);
+//     }
+//     &--water {
+//       background-color: lighten($block3, 30%);
+//     }
+//     &--boat {
+//       background-color: lighten($block4, 20%);
+
+//     }
+//   }
+
+//   &__more-icon {
+//     width: 1em;
+//     height: 1em;
+//     display: inline-block;
+//     vertical-align: middle;
+//     fill: #fff;
+//     margin-right: 0.5em;
+//   }
+//   @include respond-to(sm-and-up) {
+//     max-width: 320px;
+//     margin: 0.5em auto;
+//     padding: 1em;
+//     .river & {
+//       margin: 0;
+//     }
+//     &__upper {
+//       border-radius: 10px;
+//       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+//     }
+//     &__title {
+//       font-size: 1.5em;
+//     }
+//   }
+// }
+
+
 .city {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  background-color: $white;
+  position: relative;
+  &__col {
+    width: 150px;
+    padding: 1em;
+    &--wide {
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  }
   &__title {
     font-size: 1.2em;
+    color: $block2;
+    line-height: 1;
+  }
+  &__status-text {
+    font-size: 2em;
+    color: $body-color;
+    margin: 0;
+    line-height: 1;
   }
   &__icon {
-    position: absolute;
-    &--falls {
-      fill: darken($block1, 30%);
-      width: 6em;
-      height: 6em;
-      right: -6px;
-      bottom: 32px;
-    }
-    &--fish {
-      fill: darken($block2, 30%);
-      width: 8em;
-      height: 4em;
-      left: 0;
-      bottom: 33px;
-    }
-    &--water {
-      fill: lighten($block3, 30%);
-      width: 8em;
-      height: 4em;
-      left: -20px;
-      bottom: 30px;
-    }
-    &--boat {
-      fill: lighten($block4, 20%);
-      width: 8em;
-      height: 4em;
-      right: 0;
-      bottom: 30px;
-    }
-    .river & {
-      bottom: 0;
-      right: 0;
-      left: auto;
-      &--falls {
-        bottom: -7px;
-        right: -3px;
-      }
-    }
-  }
-  &__upper {
-    background-color: $block1;
-    height: 40vh;
-    color: #fff;
-    padding: 0.5em;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    &--fish {
-      background-color: $block2;
-    }
-    &--water {
-      background-color: $block3;
-    }
-    &--boat {
-      background-color: $block4;
-    }
-    .default & {
-      text-align: left;
-      height: auto;
-      padding-bottom: 4em;
-    }
-  }
-  &__subtitle,
-  &__title {
-    .default & {
-      margin: 0;
-    }
-  }
-  &__status {
-    border: 3px solid darken($block1, 20%);
-    border-left: none;
-    border-right: none;
-    background-color: rgba(#fff, 0.9);
-    color: #333;
-    margin: 1em 0 0;
-    font-size: 1em;
-    padding: 2em 0 1em;
-    font-size: 0.9em;
-    position: relative;
-    &--fish {
-      border-color: darken($block2, 20%);
-      // background-color: lighten($block2, 20%);
-    }
-    &--water {
-      border-color: lighten($block3, 20%);
-      // background-color: lighten($block2, 20%);
-    }
-    &--boat {
-      border-color: lighten($block4, 20%);
-      // background-color: lighten($block2, 20%);
-    }
-    // background-color: $white;
-  }
-  &__status-icon {
     width: 1em;
     height: 1em;
-    position: absolute;
-    top: 0.5em;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    &--caution {
-      fill: $caution;
-    }
+    fill: $block2;
+    margin-right: .3em;
+  }
+  &__icon-main {
+    width: 100px;
+    height: 100px;
+    fill: $body-color-lt;
     &--success {
       fill: $success;
     }
   }
-  &__status-text {
-    font-size: 1em;
-    margin: 0;
-  }
-  &__btn {
-    font-size: .9em;
-    color: #fff;
+  &__close {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    width: 90px;
+    height: 90px;
     left: 0;
-    padding: .5em 0;
-    span {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    &--falls {
-      background-color: darken($block1, 30%);
-    }
-    &--fish {
-      background-color: darken($block2, 30%);
-    }
-    &--water {
-      background-color: lighten($block3, 30%);
-    }
-    &--boat {
-      background-color: lighten($block4, 20%);
-
-    }
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: $error;
   }
-
-  &__more-icon {
-    width: 1em;
-    height: 1em;
-    display: inline-block;
-    vertical-align: middle;
-    fill: #fff;
-    margin-right: 0.5em;
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
   }
-  @include respond-to(sm-and-up) {
-    max-width: 320px;
-    margin: 0.5em auto;
-    padding: 1em;
-    .river & {
-      margin: 0;
-    }
-    &__upper {
-      border-radius: 10px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    }
-    &__title {
-      font-size: 1.5em;
-    }
+  &.default {
+    max-width: 300px;
+    margin-left: 1em;
   }
 }

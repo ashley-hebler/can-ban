@@ -9,24 +9,28 @@ import allText from "../text/all.json";
 
 const iconAttr = [
   {
-    label: "river fish",
-    name: "Artem  Kovyazin",
-    file: Fish
-  },
-  {
-    label: "Waterfall",
-    name: "Luis Prado",
-    file: Falls
-  },
-  {
-    label: "Kayak",
-    name: "Larisa Skosyrska",
-    file: Boat
-  },
-  {
     label: "waves",
     name: "Marek Polakovic",
-    file: Water
+    file: "water",
+    url: "https://thenounproject.com/search/?q=waves&i=298181"
+  },
+  {
+    label: "can",
+    name: "dDara",
+    file: "can",
+    url: "https://thenounproject.com/search/?q=can&i=1389558"
+  },
+  {
+    label: "kayak",
+    name: "Larisa Skosyrska",
+    file: "boat",
+    url: "https://thenounproject.com/search/?q=kayak&i=163433"
+  },
+  {
+    label: "river fish",
+    name: "Artem Kovyazin",
+    file: "fish",
+    url: "https://thenounproject.com/search/?q=river%20fish&i=1540907"
   }
 ];
 
@@ -34,13 +38,6 @@ class IconCredits extends React.Component {
   state = {
     source: ""
   };
-  renderIcon(file) {
-    const Icon = file;
-    return <Icon marker="icon-list__icon" />;
-  }
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
   render() {
     return (
       <div className="about">
@@ -49,8 +46,14 @@ class IconCredits extends React.Component {
           <ul class="icon-list">
             {Object.keys(iconAttr).map(key => (
               <li key={key} className="icon-list__item">
-                {this.renderIcon(iconAttr[key].file)}
-                "{iconAttr[key].label}" by {iconAttr[key].name}
+                <a href={iconAttr[key].url} className="icon-list__link">
+                  <svg className="icon-list__icon">
+                    <use xlinkHref={`#${iconAttr[key].file}`} />
+                  </svg>
+                  <span>
+                    "{iconAttr[key].label}" by {iconAttr[key].name}
+                  </span>
+                </a>
               </li>
             ))}
           </ul>
