@@ -5,39 +5,39 @@
   position: relative;
   margin-bottom: 3em;
 
-    &:before {
-      content: '';
-      width: 100%;
-      height: 175%;
-      background-image: url("img/pattern2.svg");
-      background-position: center top;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-    }
-    &:after {
-      content: "";
-      // No idea why height 100% works, needs testing
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-image: url("img/border.svg");
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: left top;
-      // weird border
-      margin-top: -1px;
-    }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 175%;
+    background-image: url('img/pattern2.svg');
+    background-position: center top;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  &:after {
+    content: '';
+    // No idea why height 100% works, needs testing
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-image: url('img/border.svg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: left top;
+    // weird border
+    margin-top: -1px;
+  }
   &--2 {
     margin: 3em 0 0;
     &:before {
       display: none;
     }
     &:after {
-      background-image: url("img/border-bottom.svg");
+      background-image: url('img/border-bottom.svg');
       background-position: left bottom;
       top: auto;
       bottom: 100%;

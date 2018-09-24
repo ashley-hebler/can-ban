@@ -1,44 +1,44 @@
 .river {
-    &__status {
-        //display: inline-block;
-        //padding: .2em;
-        font-weight: bold;
-        &--neg {
-            color: $block4;
-        }
-        &--pos {
-            color: $block1;
-        }
+  &__status {
+    //display: inline-block;
+    //padding: .2em;
+    font-weight: bold;
+    &--neg {
+      color: $block4;
     }
-    &__title {
-        border-top: 3px solid #eee;
-        border-bottom: 3px solid #eee;
-        padding: 1em 0;
-        font-weight: normal;
-        @include respond-to(md-and-up) {
-           //background-color: #eee;
-        }
+    &--pos {
+      color: $block1;
     }
-    &__text {
-        @include respond-to(md-and-up) {
-            margin-top: -100px;
-        }
+  }
+  &__title {
+    border-top: 3px solid #eee;
+    border-bottom: 3px solid #eee;
+    padding: 1em 0;
+    font-weight: normal;
+    @include respond-to(md-and-up) {
+      //background-color: #eee;
     }
-    &__nav-item {
-        span,
-        .icon {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .icon {
-            fill: $block2;
-            width: 2em;
-            height: 2em;
-            transform: rotate(180deg);
-            margin-right: .5em;
-        }
+  }
+  &__text {
+    @include respond-to(md-and-up) {
+      margin-top: -100px;
     }
-    &__nav-wrap{
-        margin: 1em 0;
+  }
+  &__nav-item {
+    span,
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
     }
+    .icon {
+      fill: $block2;
+      width: 2em;
+      height: 2em;
+      transform: rotate(180deg);
+      margin-right: 0.5em;
+    }
+  }
+  &__nav-wrap {
+    margin: 1em 0;
+  }
 }

@@ -1,107 +1,106 @@
-import React, { Component } from "react";
-import Hero from "./components/Hero";
+import React, { Component } from 'react';
+import Hero from './components/Hero';
 
 // Animation
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   withRouter
-} from "react-router-dom";
+} from 'react-router-dom';
 
 // Views
-import Home from "./views/Home";
-import River from "./views/River";
-import About from "./views/About";
+import Home from './views/Home';
+import River from './views/River';
+import About from './views/About';
 
 // Components
-import SiteFooter from "./components/SiteFooter";
-import "./App.css";
-import Helmet from "react-helmet";
-import ScrollToTop from "./utils/ScrollToTop";
+import SiteFooter from './components/SiteFooter';
+import './App.css';
+import ScrollToTop from './utils/ScrollToTop';
 
 // Helpers
-import { slugify } from "./helpers";
+import { slugify } from './helpers';
 
 // Tracking
-import withAnalytics from "./utils/analytics";
+import withAnalytics from './utils/analytics';
 
 class App extends Component {
   state = {
     cities: [
       {
-        name: "New Braunfels, TX",
-        icon: "fish",
-        rivers: "Comal",
-        status: "Banned",
-        color: "caution",
+        name: 'New Braunfels, TX',
+        icon: 'fish',
+        rivers: 'Comal',
+        status: 'Banned',
+        color: 'danger',
         plural: true,
         canBan: true,
-        file: "nb",
-        markup: ""
+        file: 'nb',
+        markup: ''
       },
       {
-        name: "New Braunfels, TX",
-        icon: "fish",
-        rivers: "Guadalupe",
-        status: "Banned*",
-        color: "caution",
+        name: 'New Braunfels, TX',
+        icon: 'fish',
+        rivers: 'Guadalupe',
+        status: 'Banned*',
+        color: 'caution',
         plural: true,
         canBan: true,
-        file: "nb",
-        markup: ""
+        file: 'nb',
+        markup: ''
       },
       {
-        name: "San Marcos, TX",
-        icon: "falls",
-        rivers: "San Marcos",
-        status: "Allowed",
-        color: "success",
+        name: 'San Marcos, TX',
+        icon: 'falls',
+        rivers: 'San Marcos',
+        status: 'Allowed',
+        color: 'success',
         plural: false,
         canBan: false,
-        file: "nb",
-        markup: ""
+        file: 'nb',
+        markup: ''
       },
       {
-        name: "Concan, TX",
-        icon: "water",
-        rivers: "Frio",
-        status: "Allowed",
-        color: "success",
+        name: 'Concan, TX',
+        icon: 'water',
+        rivers: 'Frio',
+        status: 'Allowed',
+        color: 'success',
         plural: false,
         canBan: false,
-        file: "nb",
-        markup: ""
+        file: 'nb',
+        markup: ''
       },
       {
-        name: "Bandera, TX",
-        icon: "boat",
-        rivers: "Medina",
-        status: "Allowed",
-        color: "success",
+        name: 'Bandera, TX',
+        icon: 'boat',
+        rivers: 'Medina',
+        status: 'Allowed',
+        color: 'success',
         plural: false,
         canBan: false,
-        file: "nb",
-        markup: ""
+        file: 'nb',
+        markup: ''
       }
     ],
-    last: "none",
+    last: 'none',
     hero1: {
-      main: "Is there a can ban?",
+      main: 'Is there a can ban?',
       icons: true,
       index: 1
     },
     hero2: {
-      main: "About this site",
+      main: 'About this site',
       icons: false,
       index: 2,
-      content: ""
+      content: ''
     },
-    littering: "",
+    littering: '',
     testTest: [],
-    svgs: ""
+    svgs: ''
   };
   getCompText = text => {
     let textFile = require(`./text/${text}.md`);
@@ -137,11 +136,11 @@ class App extends Component {
     });
   };
   getRiver = (slug, showSlug) => {
-    showSlug = typeof showSlug !== "undefined" ? showSlug : false;
+    showSlug = typeof showSlug !== 'undefined' ? showSlug : false;
     var current = {};
-    slug = slug.replace("/", "");
+    slug = slug.replace('/', '');
     if (slug.length < 1) {
-      slug = "home";
+      slug = 'home';
     }
     if (showSlug) {
       return slug;
@@ -167,7 +166,7 @@ class App extends Component {
     }));
   };
   componentDidMount() {
-    this.getCompText("littering");
+    this.getCompText('littering');
     this.updateText();
     this.getSVGs();
   }
@@ -178,7 +177,6 @@ class App extends Component {
           render={({ location }) => (
             <ScrollToTop>
               <div className="site-wrap">
-                <Helmet title="Is there a can ban? | 2018" />
                 <span
                   className="hidden"
                   dangerouslySetInnerHTML={{ __html: this.state.svgs }}
@@ -192,7 +190,6 @@ class App extends Component {
                     true
                   )} site-wrap__main`}
                 >
-                  {/* {GA.init() && <GA.RouteTracker />} */}
                   <TransitionGroup>
                     <CSSTransition
                       key={location.key}
@@ -213,15 +210,11 @@ class App extends Component {
                             />
                           )}
                         />
-                        <Route
-                          exact
-                          path="/about"
-                          render={props => <About />}
-                        />
+                        <Route exact path="/about" component={About} />
                         <Route
                           exact
                           path="/:id"
-                          render={(props, match) => (
+                          render={props => (
                             <River
                               {...props}
                               currentRiver={this.getRiver(location.pathname)}
@@ -229,7 +222,6 @@ class App extends Component {
                             />
                           )}
                         />
-                        <Route path="/:id" component={River} />
                         <Route render={() => <div>Not Found</div>} />
                       </Switch>
                     </CSSTransition>

@@ -1,20 +1,11 @@
 .site-footer {
-	padding: 3em 0;
-	border-top: 5px solid darken($primary-color, 10%);
-	text-align: center;
-	a {
-		color: $body-color;
-		text-decoration: none;
-	}
-	&__list {
-		padding: 0;
-		justify-content: center;
-		display: flex;
-		align-items: center;
-		list-style: none;
-		li {
-			margin: 0 .3em;
-
-		}
-	}
+  background-color: $block3;
+  padding: 1em 0;
+  border-top: 5px solid darken($block3, 10%);
+  text-align: center;
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }

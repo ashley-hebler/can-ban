@@ -1,8 +1,8 @@
 // utils/GoogleAnalytics.js
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import ReactGA from "react-ga";
-import { Route } from "react-router-dom";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
+import { Route } from 'react-router-dom';
 
 class GoogleAnalytics extends Component {
   componentDidMount() {
@@ -24,7 +24,7 @@ class GoogleAnalytics extends Component {
     }
   }
 
-  logPageChange(pathname, search = "") {
+  logPageChange(pathname, search = '') {
     const page = pathname + search;
     const { location } = window;
     ReactGA.set({
@@ -53,7 +53,7 @@ const RouteTracker = () => <Route component={GoogleAnalytics} />;
 const init = (options = {}) => {
   const isGAEnabled = true;
   if (isGAEnabled) {
-    ReactGA.initialize("UA-119991646-1");
+    ReactGA.initialize('UA-119991646-1');
   }
   return isGAEnabled;
 };

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import * as Animated from "animated/lib/targets/react-dom";
+import React, { Component } from 'react';
+import * as Animated from 'animated/lib/targets/react-dom';
 
 const AnimatedWrapper = WrappedComponent =>
   class AnimatedWrapper extends Component {
@@ -30,7 +30,7 @@ const AnimatedWrapper = WrappedComponent =>
         transform: Animated.template`
     translate3d(0,${this.state.animate.interpolate({
       inputRange: [0, 1],
-      outputRange: ["12px", "0px"]
+      outputRange: ['12px', '0px']
     })},0)
    `
       };

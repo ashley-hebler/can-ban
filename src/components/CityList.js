@@ -1,12 +1,12 @@
-import React from "react";
-import City from "../components/City";
+import React from 'react';
+import City from '../components/City';
 
 class CityList extends React.Component {
   addClassIfLast = name => {
     if (name && name === this.props.last) {
-      return "last";
+      return 'last';
     } else {
-      return "normal";
+      return 'normal';
     }
   };
   render() {
