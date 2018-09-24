@@ -1,24 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { slugify } from '../helpers';
-import Plus from '../img/Plus.js';
 
 class City extends React.Component {
-  renderLink() {
-    if (this.props.compact) {
-      return (
-        <Link
-          to={slugify(this.props.info.name)}
-          className={`city__btn city__btn--${this.props.info.icon}`}
-        >
-          <Plus
-            marker={`city__more-icon city__more-icon--${this.props.info.color}`}
-          />
-          <span>Read More</span>
-        </Link>
-      );
-    }
-  }
   renderStatus() {
     if (this.props.compact) {
       return (

@@ -2,7 +2,7 @@ import React from 'react';
 import City from '../components/City';
 import TextBody from '../components/TextBody';
 import { Link } from 'react-router-dom';
-import Arrow from '../img/Arrow.js';
+// import Arrow from '../img/Arrow.js';
 import allText from '../text/all.json';
 import { isEmpty } from '../helpers';
 
@@ -48,7 +48,9 @@ class River extends React.Component {
         <div className="container river__text">
           <nav className="river__nav-wrap">
             <Link className="river__nav-item" to="/">
-              <Arrow marker="icon" />
+              <svg className="icon">
+                <use xlinkHref="#arrow" />
+              </svg>
               <span>Back</span>
             </Link>
           </nav>
