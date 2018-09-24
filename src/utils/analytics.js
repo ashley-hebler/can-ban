@@ -1,9 +1,9 @@
-import React from "react";
-import ga from "react-ga";
-let dev = process.env.NODE_ENV !== "production";
+import React from 'react';
+import ga from 'react-ga';
+let dev = process.env.NODE_ENV !== 'production';
 dev = false;
 
-if (!dev) ga.initialize("UA-119991646-1");
+if (!dev) ga.initialize('UA-119991646-1');
 
 export default Component =>
   class WithAnalytics extends React.Component {

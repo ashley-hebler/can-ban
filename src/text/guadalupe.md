@@ -5,7 +5,9 @@
 This is a city of New Braunfels ordinance. For the Guad, this means "that portion of the Guadalupe River that starts at the Gruene Bridge and ends at the Mill Dam." The Comal River starts and eventually flows into the Gaud and the entirety of that river flows through New Braunfels city limits.
 
 ### Definition of a disposable container
-According to Sec. 86-14(a) of the New Braunfels city code of ordinances, <blockquote>Disposable container means a receptacle designed to be used once, then thrown away. For purposes of this subsection, disposable containers include, but are not limited to, metal and aluminum cans, glass containers, Styrofoam cups and containers, cardboard containers, paper sacks, boxes, paper napkins and towels, and plastic containers and utensils.</blockquote>
+According to Sec. 86-14(a) of the New Braunfels city code of ordinances,
+
+<blockquote>Disposable container means a receptacle designed to be used once, then thrown away. For purposes of this subsection, disposable containers include, but are not limited to, metal and aluminum cans, glass containers, Styrofoam cups and containers, cardboard containers, paper sacks, boxes, paper napkins and towels, and plastic containers and utensils.</blockquote>
 
 ### Does a can ban mean no alcohol?
 Not necessarily, check the [Comal River pro tip](/comal#comalProTip).

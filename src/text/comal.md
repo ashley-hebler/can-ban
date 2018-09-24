@@ -1,5 +1,7 @@
 ### Definition of a disposable container
-According to Sec. 86-14(a) of the New Braunfels city code of ordinances, <blockquote>Disposable container means a receptacle designed to be used once, then thrown away. For purposes of this subsection, disposable containers include, but are not limited to, metal and aluminum cans, glass containers, Styrofoam cups and containers, cardboard containers, paper sacks, boxes, paper napkins and towels, and plastic containers and utensils.</blockquote>
+According to Sec. 86-14(a) of the New Braunfels city code of ordinances,
+
+<blockquote>Disposable container means a receptacle designed to be used once, then thrown away. For purposes of this subsection, disposable containers include, but are not limited to, metal and aluminum cans, glass containers, Styrofoam cups and containers, cardboard containers, paper sacks, boxes, paper napkins and towels, and plastic containers and utensils.</blockquote>
 
 
 ### Also banned on the Comal

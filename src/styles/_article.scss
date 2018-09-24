@@ -1,7 +1,7 @@
 .article {
   // Count mixin
   @for $i from 1 through 20 {
-    ol[start="#{$i}"] {
+    ol[start='#{$i}'] {
       counter-reset: step-counter $i - 1;
     }
   }
@@ -13,16 +13,18 @@
       font-size: 1.8em;
     }
   }
-  p, li {
+  blockquote,
+  p,
+  li {
     font-size: 1.1em;
-    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
-    letter-spacing: .01rem;
+    font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+    letter-spacing: 0.01rem;
     font-size: 18px;
     line-height: 1.58;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: "liga" on;
-    color: rgba(0,0,0,.84);
+    -moz-font-feature-settings: 'liga' on;
+    color: rgba(0, 0, 0, 0.84);
     @include respond-to(md-and-up) {
       font-size: 21px;
     }
@@ -42,21 +44,21 @@
     // }
   }
   ol > li:before {
-  content: counter(step-counter);
-  margin-right: 5px;
-  font-size: 80%;
-  background-color: $block2;
-  color: white;
-  font-weight: bold;
-  width: $numberSize;
-  height: $numberSize;
-  line-height: $numberSize;
-  text-align: center;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  font-family: $main-font;
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: $block2;
+    color: white;
+    font-weight: bold;
+    width: $numberSize;
+    height: $numberSize;
+    line-height: $numberSize;
+    text-align: center;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    font-family: $main-font;
   }
   footer {
     margin: 2em 0;
