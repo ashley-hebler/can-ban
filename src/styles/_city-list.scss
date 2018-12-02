@@ -12,5 +12,8 @@
     flex-wrap: wrap;
     justify-content: center;
     // max-width: 1800px;
+    &__item {
+      max-width: 350px;
+    }
   }
 }

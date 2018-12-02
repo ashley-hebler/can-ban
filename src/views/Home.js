@@ -20,7 +20,10 @@ class Home extends React.Component {
         <div className="site-desc">
           <p>*The Guadalupe River has a ban in place within city limits.</p>
           <p>
-            <em>Updated Summer 2018</em>
+            <strong>Can ban info updated:</strong> <em>Summer 2018</em>
+          </p>
+          <p>
+            <strong>Streamflow and gage height updated:</strong> <em>Every two hours by <a href="https://waterservices.usgs.gov">USGS</a></em>
           </p>
         </div>
         <Hero heroData={this.props.heroData} />

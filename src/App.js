@@ -39,7 +39,8 @@ class App extends Component {
         plural: true,
         canBan: true,
         file: 'nb',
-        markup: ''
+        markup: '',
+        siteId: '08168500'
       },
       {
         name: 'New Braunfels, TX',
@@ -50,7 +51,8 @@ class App extends Component {
         plural: true,
         canBan: true,
         file: 'nb',
-        markup: ''
+        markup: '',
+        siteId: '08169000'
       },
       {
         name: 'San Marcos, TX',
@@ -61,7 +63,8 @@ class App extends Component {
         plural: false,
         canBan: false,
         file: 'nb',
-        markup: ''
+        markup: '',
+        siteId: '08170500'
       },
       {
         name: 'Concan, TX',
@@ -72,7 +75,8 @@ class App extends Component {
         plural: false,
         canBan: false,
         file: 'nb',
-        markup: ''
+        markup: '',
+        siteId: '08195000'
       },
       {
         name: 'Bandera, TX',
@@ -83,7 +87,8 @@ class App extends Component {
         plural: false,
         canBan: false,
         file: 'nb',
-        markup: ''
+        markup: '',
+        siteId: '08178880'
       }
     ],
     last: 'none',
