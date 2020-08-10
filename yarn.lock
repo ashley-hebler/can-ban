@@ -2309,9 +2309,9 @@ domhandler@2.1:
   dependencies:
     domelementtype "1"
 
-dompurify@^1.0.8:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.11.tgz#fe0f4a40d147f7cebbe31a50a1357539cfc1eb4d"
+dompurify@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.0.12.tgz#284a2b041e1c60b8e72d7b4d2fadad36141254ae"
 
 domutils@1.1:
   version "1.1.6"
