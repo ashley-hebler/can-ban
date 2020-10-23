@@ -6,7 +6,7 @@
     "dompurify": "^2.0.12",
     "eslint-plugin-prettier": "^2.6.0",
     "prettier": "1.12.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^4.0.0"
   },
   "dependencies": {
     "animated": "^0.2.2",
